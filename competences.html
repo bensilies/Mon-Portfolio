@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compétences — Portfolio E5 BTS SIO SISR</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { padding-top: 60px; }
+  .competences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .competence-card {
+    background: var(--card-bg);
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 1.6rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .competence-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.09);
+  }
+  .comp-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem; }
+  .comp-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .comp-icon.blue { background: rgba(37,99,235,0.1); }
+  .comp-icon.amber { background: rgba(245,158,11,0.12); }
+  .comp-icon.green { background: rgba(16,185,129,0.1); }
+  .comp-icon.purple { background: rgba(139,92,246,0.1); }
+  .comp-icon.red { background: rgba(239,68,68,0.1); }
+  .comp-icon.teal { background: rgba(20,184,166,0.1); }
+  .comp-title { font-size: 1rem; font-weight: 600; color: var(--navy); }
+  .comp-sub { font-size: 0.82rem; color: var(--text-muted); font-weight: 300; margin-top: 2px; }
+  .skill-bars { display: flex; flex-direction: column; gap: 10px; }
+  .skill-item { display: flex; flex-direction: column; gap: 5px; }
+  .skill-label { display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--text-muted); }
+  .skill-label span:last-child { font-weight: 600; color: var(--text); }
+  .skill-bar { height: 6px; background: var(--gray-100); border-radius: 100px; overflow: hidden; }
+  .skill-fill {
+    height: 100%; border-radius: 100px;
+    background: linear-gradient(90deg, var(--blue), var(--blue-light));
+    transition: width 1s cubic-bezier(0.4,0,0.2,1); width: 0;
+  }
+  .skill-fill.amber { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
+  .skill-fill.green { background: linear-gradient(90deg, #10B981, #34D399); }
+  .skill-fill.purple { background: linear-gradient(90deg, #8B5CF6, #A78BFA); }
+  .skill-fill.red { background: linear-gradient(90deg, #EF4444, #F87171); }
+  .skill-fill.teal { background: linear-gradient(90deg, #14B8A6, #2DD4BF); }
+
+  /* Bloc compétences BTS */
+  .bts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .bts-card {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 1.3rem 1.5rem;
+    color: var(--white);
+  }
+  .bts-card-code { font-size: 0.75rem; color: var(--accent); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .bts-card-title { font-size: 0.95rem; font-weight: 500; color: var(--white); line-height: 1.4; }
+  .bts-card-detail { font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 300; margin-top: 0.4rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolio <span>E5</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="presentation.html">Présentation</a></li>
+    <li><a href="formation.html">Formation</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="situations.html">Situations</a></li>
+    <li><a href="veille.html">Veille</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section>
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Savoir-faire</div>
+      <h2 class="section-title">Compétences techniques</h2>
+      <p class="section-sub">Les domaines maîtrisés tout au long de ma formation SISR</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="competences-grid fade-in">
+
+      <!-- Carte 1 — Réseaux. Modifie les % et les noms de compétences -->
+      <div class="competence-card">
+        <div class="comp-header">
+          <div class="comp-icon blue">🌐</div>
+          <div>
+            <div class="comp-title">Réseaux & Administration</div>
+            <div class="comp-sub">Protocoles, routage, switching</div>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-item">
+            <div class="skill-label"><span>Cisco IOS / Routage</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>VLAN / Switching</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>TCP/IP / Modèle OSI</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>VPN / WAN</span><span>65%</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 2 — Systèmes -->
+      <div class="competence-card">
+        <div class="comp-header">
+          <div class="comp-icon amber">🖥️</div>
+          <div>
+            <div class="comp-title">Systèmes d'exploitation</div>
+            <div class="comp-sub">Administration serveurs</div>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-item">
+            <div class="skill-label"><span>Windows Server</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill amber" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Linux (Debian/Ubuntu)</span><span>70%</span></div>
+            <div class="skill-bar"><div class="skill-fill amber" data-width="70"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Active Directory / GPO</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill amber" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>PowerShell / Bash</span><span>60%</span></div>
+            <div class="skill-bar"><div class="skill-fill amber" data-width="60"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 3 — Sécurité -->
+      <div class="competence-card">
+        <div class="comp-header">
+          <div class="comp-icon green">🛡️</div>
+          <div>
+            <div class="comp-title">Sécurité informatique</div>
+            <div class="comp-sub">Protection, pare-feu, audits</div>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-item">
+            <div class="skill-label"><span>Pare-feu (pfSense / iptables)</span><span>70%</span></div>
+            <div class="skill-bar"><div class="skill-fill green" data-width="70"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Analyse de vulnérabilités</span><span>65%</span></div>
+            <div class="skill-bar"><div class="skill-fill green" data-width="65"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Chiffrement / PKI / SSL</span><span>60%</span></div>
+            <div class="skill-bar"><div class="skill-fill green" data-width="60"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>ANSSI / RGPD</span><span>55%</span></div>
+            <div class="skill-bar"><div class="skill-fill green" data-width="55"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 4 — Virtualisation -->
+      <div class="competence-card">
+        <div class="comp-header">
+          <div class="comp-icon purple">☁️</div>
+          <div>
+            <div class="comp-title">Virtualisation & Cloud</div>
+            <div class="comp-sub">Hyperviseurs, conteneurs</div>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-item">
+            <div class="skill-label"><span>VMware / VirtualBox</span><span>75%</span></div>
+            <div class="skill-bar"><div class="skill-fill purple" data-width="75"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Docker / Conteneurs</span><span>60%</span></div>
+            <div class="skill-bar"><div class="skill-fill purple" data-width="60"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Azure / AWS (notions)</span><span>45%</span></div>
+            <div class="skill-bar"><div class="skill-fill purple" data-width="45"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Proxmox / Hyper-V</span><span>55%</span></div>
+            <div class="skill-bar"><div class="skill-fill purple" data-width="55"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 5 — Services réseau. Modifie ou supprime selon ton niveau -->
+      <div class="competence-card">
+        <div class="comp-header">
+          <div class="comp-icon teal">⚙️</div>
+          <div>
+            <div class="comp-title">Services réseau</div>
+            <div class="comp-sub">DNS, DHCP, supervision</div>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-item">
+            <div class="skill-label"><span>DNS / DHCP</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill teal" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Zabbix / Nagios (supervision)</span><span>60%</span></div>
+            <div class="skill-bar"><div class="skill-fill teal" data-width="60"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Samba / NFS</span><span>55%</span></div>
+            <div class="skill-bar"><div class="skill-fill teal" data-width="55"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Messagerie (Exchange/Postfix)</span><span>50%</span></div>
+            <div class="skill-bar"><div class="skill-fill teal" data-width="50"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte 6 — Soft skills -->
+      <div class="competence-card">
+        <div class="comp-header">
+          <div class="comp-icon red">💡</div>
+          <div>
+            <div class="comp-title">Compétences transversales</div>
+            <div class="comp-sub">Communication, organisation</div>
+          </div>
+        </div>
+        <div class="skill-bars">
+          <div class="skill-item">
+            <div class="skill-label"><span>Rédaction documentaire</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill red" data-width="85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Travail en équipe</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill red" data-width="90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Support utilisateur</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-fill red" data-width="80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-label"><span>Gestion de projet</span><span>65%</span></div>
+            <div class="skill-bar"><div class="skill-fill red" data-width="65"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BLOC COMPETENCES BTS -->
+    <div class="section-header fade-in" style="margin-top:4rem;">
+      <div class="section-tag">Référentiel BTS SIO</div>
+      <h2 class="section-title" style="font-size:1.8rem;">Blocs de compétences SISR</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="bts-grid fade-in">
+      <!-- Modifie ou complète selon le référentiel officiel -->
+      <div class="bts-card">
+        <div class="bts-card-code">B1.1</div>
+        <div class="bts-card-title">Gérer le patrimoine informatique</div>
+        <div class="bts-card-detail">Recenser et identifier les ressources numériques</div>
+      </div>
+      <div class="bts-card">
+        <div class="bts-card-code">B1.2</div>
+        <div class="bts-card-title">Répondre aux incidents et demandes d'assistance</div>
+        <div class="bts-card-detail">Traiter les incidents, qualifier les demandes</div>
+      </div>
+      <div class="bts-card">
+        <div class="bts-card-code">B1.3</div>
+        <div class="bts-card-title">Développer la présence en ligne de l'organisation</div>
+        <div class="bts-card-detail">Participer à l'évolution du SI</div>
+      </div>
+      <div class="bts-card">
+        <div class="bts-card-code">B2.1</div>
+        <div class="bts-card-title">Concevoir et réaliser un réseau informatique</div>
+        <div class="bts-card-detail">Architecture, câblage, configuration</div>
+      </div>
+      <div class="bts-card">
+        <div class="bts-card-code">B2.2</div>
+        <div class="bts-card-title">Installer et configurer des équipements actifs</div>
+        <div class="bts-card-detail">Commutateurs, routeurs, points d'accès</div>
+      </div>
+      <div class="bts-card">
+        <div class="bts-card-code">B2.3</div>
+        <div class="bts-card-title">Faire évoluer et maintenir le réseau</div>
+        <div class="bts-card-detail">Supervision, optimisation, documentation</div>
+      </div>
+      <div class="bts-card">
+        <div class="bts-card-code">B3.1</div>
+        <div class="bts-card-title">Protéger les données, les utilisateurs et le SI</div>
+        <div class="bts-card-detail">Sécuriser, sauvegarder, contrôler les accès</div>
+      </div>
+      <div class="bts-card">
+        <div class="bts-card-code">B3.2</div>
+        <div class="bts-card-title">Assurer la cybersécurité d'une infrastructure</div>
+        <div class="bts-card-detail">Audits, plans de reprise, veille sécurité</div>
+      </div>
+      <div class="bts-card">
+        <div class="bts-card-code">B3.3</div>
+        <div class="bts-card-title">Organiser son développement professionnel</div>
+        <div class="bts-card-detail">Veille, certifications, auto-formation</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>Portfolio E5 — BTS SIO option SISR · <span>Prénom NOM</span> · Promotion 2023–2025</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

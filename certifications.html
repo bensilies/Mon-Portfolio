@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certifications — Portfolio E5 BTS SIO SISR</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { padding-top: 60px; }
+  .certif-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+  .certif-card {
+    background: var(--card-bg);
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 1.4rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .certif-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+  }
+  .certif-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; flex-shrink: 0;
+  }
+  .certif-info h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .certif-info p { font-size: 0.82rem; color: var(--text-muted); font-weight: 300; }
+  .certif-info .certif-date { font-size: 0.78rem; color: var(--blue); font-weight: 500; margin-top: 0.4rem; }
+  .certif-info .certif-badge {
+    display: inline-block;
+    font-size: 0.72rem; font-weight: 600;
+    padding: 0.15rem 0.5rem; border-radius: 4px;
+    margin-top: 0.4rem;
+  }
+  .certif-badge.obtenu { background: rgba(16,185,129,0.1); color: #065F46; }
+  .certif-badge.en-cours { background: rgba(245,158,11,0.12); color: #B45309; }
+  .certif-badge.auto { background: rgba(37,99,235,0.08); color: var(--blue); }
+
+  /* Section auto-formation */
+  .autoform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .autoform-card {
+    background: var(--section-bg);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    transition: border-color 0.2s;
+  }
+  .autoform-card:hover { border-color: var(--blue); }
+  .autoform-platform { font-size: 0.75rem; color: var(--blue); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.3rem; }
+  .autoform-title { font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+  .autoform-desc { font-size: 0.82rem; color: var(--text-muted); font-weight: 300; line-height: 1.5; }
+  .autoform-date { font-size: 0.76rem; color: var(--text-muted); margin-top: 0.5rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolio <span>E5</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="presentation.html">Présentation</a></li>
+    <li><a href="formation.html">Formation</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="situations.html">Situations</a></li>
+    <li><a href="veille.html">Veille</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section>
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Compétence B3.3</div>
+      <h2 class="section-title">Certifications obtenues</h2>
+      <p class="section-sub">Les certifications et formations qui complètent ma formation BTS SIO SISR</p>
+      <div class="divider"></div>
+    </div>
+    <div class="certif-grid fade-in">
+
+      <!-- Modifie chaque carte avec tes vraies certifications -->
+      <div class="certif-card">
+        <div class="certif-icon" style="background:rgba(37,99,235,0.1)">🏅</div>
+        <div class="certif-info">
+          <h4>Nom de la certification 1</h4>
+          <p>Organisme — Ex : Cisco, Microsoft, CompTIA</p>
+          <div class="certif-date">📅 Date d'obtention : Mois AAAA</div>
+          <span class="certif-badge obtenu">Obtenu</span>
+        </div>
+      </div>
+
+      <div class="certif-card">
+        <div class="certif-icon" style="background:rgba(245,158,11,0.12)">🥇</div>
+        <div class="certif-info">
+          <h4>Nom de la certification 2</h4>
+          <p>Organisme — Ex : Cisco, Microsoft, CompTIA</p>
+          <div class="certif-date">📅 Date d'obtention : Mois AAAA</div>
+          <span class="certif-badge obtenu">Obtenu</span>
+        </div>
+      </div>
+
+      <div class="certif-card">
+        <div class="certif-icon" style="background:rgba(16,185,129,0.1)">🎖️</div>
+        <div class="certif-info">
+          <h4>Nom de la certification 3</h4>
+          <p>Organisme — Ex : Cisco, Microsoft, CompTIA</p>
+          <div class="certif-date">📅 En cours de préparation</div>
+          <span class="certif-badge en-cours">En cours</span>
+        </div>
+      </div>
+
+      <div class="certif-card">
+        <div class="certif-icon" style="background:rgba(139,92,246,0.1)">📜</div>
+        <div class="certif-info">
+          <h4>Nom de la certification 4</h4>
+          <p>Organisme — Ex : ANSSI, EC-Council, Palo Alto</p>
+          <div class="certif-date">📅 Date d'obtention : Mois AAAA</div>
+          <span class="certif-badge obtenu">Obtenu</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AUTO-FORMATION -->
+    <div class="section-header fade-in" style="margin-top:4rem;">
+      <div class="section-tag">Développement personnel</div>
+      <h2 class="section-title" style="font-size:1.8rem;">Auto-formation & Projets personnels</h2>
+      <p class="section-sub">Les formations en ligne et projets réalisés en dehors du cursus officiel</p>
+      <div class="divider"></div>
+    </div>
+    <div class="autoform-grid fade-in">
+
+      <!-- Modifie chaque bloc avec tes vraies formations -->
+      <div class="autoform-card">
+        <div class="autoform-platform">OpenClassrooms</div>
+        <div class="autoform-title">Titre du cours ou de la formation 1</div>
+        <div class="autoform-desc">Décris brièvement ce que tu as appris dans cette formation et en quoi elle t'a été utile.</div>
+        <div class="autoform-date">📅 Période : Mois AAAA</div>
+      </div>
+
+      <div class="autoform-card">
+        <div class="autoform-platform">Cisco NetAcad</div>
+        <div class="autoform-title">Titre du cours ou de la formation 2</div>
+        <div class="autoform-desc">Décris brièvement ce que tu as appris dans cette formation et en quoi elle t'a été utile.</div>
+        <div class="autoform-date">📅 Période : Mois AAAA</div>
+      </div>
+
+      <div class="autoform-card">
+        <div class="autoform-platform">YouTube / Documentation</div>
+        <div class="autoform-title">Titre du projet personnel 1</div>
+        <div class="autoform-desc">Décris un projet personnel réalisé en autodidacte : home lab, serveur perso, configuration réseau chez toi, etc.</div>
+        <div class="autoform-date">📅 Période : Mois AAAA</div>
+      </div>
+
+      <div class="autoform-card">
+        <div class="autoform-platform">TryHackMe / HackTheBox</div>
+        <div class="autoform-title">Titre du projet personnel 2</div>
+        <div class="autoform-desc">Décris un autre projet ou formation en auto-apprentissage que tu as réalisé.</div>
+        <div class="autoform-date">📅 Période : Mois AAAA</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Portfolio E5 — BTS SIO option SISR · <span>Prénom NOM</span> · Promotion 2023–2025</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

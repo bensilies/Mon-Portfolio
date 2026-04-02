@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Portfolio E5 BTS SIO SISR</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { padding-top: 60px; background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; }
+  main { flex: 1; }
+  .section-tag-dark { display: inline-block; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.15); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 100px; margin-bottom: 0.9rem; }
+  .section-title-dark { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 0.75rem; }
+  .section-sub-dark { color: rgba(255,255,255,0.5); font-size: 1rem; font-weight: 300; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+  .divider-dark { width: 48px; height: 3px; background: var(--accent); border-radius: 2px; margin: 1.2rem auto 0; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+  .contact-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 1.6rem;
+    text-align: center;
+    transition: background 0.2s, transform 0.2s;
+    text-decoration: none;
+    display: block;
+  }
+  .contact-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-3px); }
+  .contact-icon { font-size: 2.2rem; display: block; margin-bottom: 0.8rem; }
+  .contact-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+  .contact-value { font-size: 0.92rem; font-weight: 500; color: var(--white); word-break: break-all; }
+
+  /* Bloc texte de conclusion -->*/
+  .conclusion {
+    max-width: 600px;
+    margin: 4rem auto 0;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+  }
+  .conclusion h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 1rem; }
+  .conclusion p { color: rgba(255,255,255,0.5); font-size: 0.9rem; font-weight: 300; line-height: 1.8; }
+  .conclusion .accent { color: var(--accent); font-weight: 500; }
+
+  footer { background: #07131F; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolio <span>E5</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="presentation.html">Présentation</a></li>
+    <li><a href="formation.html">Formation</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="situations.html">Situations</a></li>
+    <li><a href="veille.html">Veille</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="section-header fade-in" style="color:white;">
+        <div class="section-tag-dark">Me rejoindre</div>
+        <h2 class="section-title-dark">Contact</h2>
+        <p class="section-sub-dark">Retrouvez-moi sur les plateformes professionnelles ou par email</p>
+        <div class="divider-dark"></div>
+      </div>
+
+      <div class="contact-grid fade-in">
+
+        <!-- Modifie chaque lien et valeur avec tes vraies informations -->
+        <a href="mailto:ton.email@exemple.com" class="contact-card">
+          <span class="contact-icon">✉️</span>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">ton.email@exemple.com</div>
+        </a>
+
+        <a href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-icon">💼</span>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">linkedin.com/in/ton-profil</div>
+        </a>
+
+        <a href="https://github.com/ton-pseudo" target="_blank" rel="noopener" class="contact-card">
+          <span class="contact-icon">🐙</span>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">github.com/ton-pseudo</div>
+        </a>
+
+        <div class="contact-card">
+          <span class="contact-icon">📍</span>
+          <div class="contact-label">Localisation</div>
+          <div class="contact-value">Ville, Région</div>
+        </div>
+
+      </div>
+
+      <!-- CONCLUSION -->
+      <div class="conclusion fade-in">
+        <h3>Merci pour votre visite</h3>
+        <!-- Modifie ce message de conclusion -->
+        <p>
+          Ce portfolio présente l'ensemble de mon parcours et de mes compétences acquises au cours de ma formation
+          <span class="accent">BTS SIO option SISR</span>. Je reste disponible pour tout échange autour de mes situations professionnelles ou de mon projet d'avenir.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Portfolio E5 — BTS SIO option SISR · <span>Prénom NOM</span> · Promotion 2023–2025</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

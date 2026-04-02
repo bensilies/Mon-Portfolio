@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formation — Portfolio E5 BTS SIO SISR</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { padding-top: 60px; background: var(--section-bg); }
+  .timeline {
+    position: relative;
+    padding-left: 2.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--blue), var(--accent));
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .timeline-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -2rem; top: 1.5rem;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 3px solid var(--section-bg);
+    box-shadow: 0 0 0 2px var(--blue);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .timeline-dot::after {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--white);
+  }
+  .timeline-date {
+    font-size: 0.78rem; font-weight: 600;
+    color: var(--blue);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .timeline-title { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .timeline-sub { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; }
+  .timeline-desc {
+    font-size: 0.87rem; color: var(--text-muted);
+    margin-top: 0.6rem; line-height: 1.6; font-weight: 300;
+  }
+  .timeline-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+  .timeline-tag {
+    background: rgba(37,99,235,0.08);
+    color: var(--blue);
+    font-size: 0.75rem; font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid rgba(37,99,235,0.15);
+  }
+  .timeline-item.alternance .timeline-dot { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+  .timeline-item.alternance .timeline-date { color: #B45309; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolio <span>E5</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="presentation.html">Présentation</a></li>
+    <li><a href="formation.html">Formation</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="situations.html">Situations</a></li>
+    <li><a href="veille.html">Veille</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section>
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Parcours</div>
+      <h2 class="section-title">Formation & Expérience</h2>
+      <p class="section-sub">Mon parcours académique et professionnel, de la classe de seconde à aujourd'hui</p>
+      <div class="divider"></div>
+    </div>
+    <div class="fade-in">
+      <div class="timeline">
+
+        <!-- ITEM 1 — Formation actuelle. Modifie les dates et l'établissement -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2023 — 2025</div>
+          <div class="timeline-title">BTS Services Informatiques aux Organisations — option SISR</div>
+          <div class="timeline-sub">Nom de l'établissement · Ville</div>
+          <div class="timeline-desc">
+            Formation de 2 ans en infrastructure systèmes et réseaux. Administration réseau, sécurité informatique, virtualisation, services cloud, gestion de projet.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Windows Server</span>
+            <span class="timeline-tag">Linux</span>
+            <span class="timeline-tag">Cisco IOS</span>
+            <span class="timeline-tag">VMware</span>
+            <span class="timeline-tag">Active Directory</span>
+          </div>
+        </div>
+
+        <!-- ITEM 2 — Stage ou alternance 2. Modifie les infos -->
+        <div class="timeline-item alternance">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Dates alternance / stage 2</div>
+          <div class="timeline-title">Intitulé du poste — ex : Technicien réseau</div>
+          <div class="timeline-sub">Nom de l'entreprise · Ville</div>
+          <div class="timeline-desc">
+            Décris ici les missions principales réalisées lors de ce stage ou cette alternance. Parle des technologies utilisées, des projets auxquels tu as participé, et de ce que tu en as appris.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Technologie 1</span>
+            <span class="timeline-tag">Technologie 2</span>
+            <span class="timeline-tag">Technologie 3</span>
+          </div>
+        </div>
+
+        <!-- ITEM 3 — Stage ou alternance 1 -->
+        <div class="timeline-item alternance">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Dates alternance / stage 1</div>
+          <div class="timeline-title">Intitulé du poste — ex : Administrateur systèmes</div>
+          <div class="timeline-sub">Nom de l'entreprise · Ville</div>
+          <div class="timeline-desc">
+            Décris ici les missions principales réalisées lors de ce stage ou cette alternance.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Technologie 1</span>
+            <span class="timeline-tag">Technologie 2</span>
+          </div>
+        </div>
+
+        <!-- ITEM 4 — Baccalauréat -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2020 — 2023</div>
+          <div class="timeline-title">Baccalauréat — Série / Spécialité</div>
+          <div class="timeline-sub">Nom de l'établissement · Ville</div>
+          <div class="timeline-desc">
+            Décris ici ta série de bac, tes spécialités et les enseignements qui t'ont orienté vers l'informatique.
+          </div>
+        </div>
+
+        <!-- Tu peux ajouter d'autres items en copiant un bloc ci-dessus -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Portfolio E5 — BTS SIO option SISR · <span>Prénom NOM</span> · Promotion 2023–2025</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

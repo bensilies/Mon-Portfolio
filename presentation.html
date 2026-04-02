@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Présentation — Portfolio E5 BTS SIO SISR</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body { padding-top: 60px; }
+  .presentation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .presentation-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .profile-photo {
+    width: 220px; height: 220px;
+    border-radius: 20px;
+    border: 3px solid var(--gray-200);
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--accent);
+    font-weight: 700;
+    overflow: hidden;
+  }
+  .profile-photo img { width:100%; height:100%; object-fit:cover; display:none; }
+  .info-chips { display: flex; flex-direction: column; gap: 0.6rem; width: 100%; }
+  .info-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    font-size: 0.87rem;
+  }
+  .info-chip .icon {
+    width: 28px; height: 28px;
+    background: rgba(37,99,235,0.1);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+  }
+  .info-chip .label { color: var(--text-muted); font-size: 0.75rem; }
+  .info-chip .value { font-weight: 500; color: var(--text); }
+  .presentation-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+  }
+  .presentation-text p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+  @media (max-width: 768px) {
+    .presentation-grid { grid-template-columns: 1fr; }
+    .presentation-visual { flex-direction: row; align-items: flex-start; }
+    .profile-photo { width: 100px; height: 100px; font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolio <span>E5</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="presentation.html">Présentation</a></li>
+    <li><a href="formation.html">Formation</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="situations.html">Situations</a></li>
+    <li><a href="veille.html">Veille</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section>
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Qui suis-je ?</div>
+      <h2 class="section-title">Présentation personnelle</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="presentation-grid fade-in">
+      <div class="presentation-visual">
+        <!-- PHOTO : remplace "P N" par tes initiales, ou mets ton URL photo dans src= et retire display:none -->
+        <div class="profile-photo">
+          <img src="" alt="Photo de profil">
+          <span>P N</span>
+        </div>
+        <div class="info-chips">
+          <!-- Modifie chaque ligne avec tes vraies informations -->
+          <div class="info-chip">
+            <div class="icon">📍</div>
+            <div><div class="label">Localisation</div><div class="value">Ville, Région</div></div>
+          </div>
+          <div class="info-chip">
+            <div class="icon">🎓</div>
+            <div><div class="label">Formation</div><div class="value">BTS SIO — SISR</div></div>
+          </div>
+          <div class="info-chip">
+            <div class="icon">🏢</div>
+            <div><div class="label">Établissement</div><div class="value">Nom de ton lycée / CFA</div></div>
+          </div>
+          <div class="info-chip">
+            <div class="icon">📅</div>
+            <div><div class="label">Promotion</div><div class="value">2023 — 2025</div></div>
+          </div>
+          <div class="info-chip">
+            <div class="icon">💼</div>
+            <div><div class="label">Entreprise</div><div class="value">Nom de l'entreprise d'alternance</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="presentation-text">
+        <h2>Bienvenue sur mon portfolio professionnel</h2>
+        <!-- Modifie les paragraphes ci-dessous avec ta vraie présentation -->
+        <p>
+          Décris ici ton profil en quelques phrases : qui tu es, ce qui t'a amené à choisir le BTS SIO option SISR, tes motivations dans le domaine de l'informatique et des réseaux.
+        </p>
+        <p>
+          Mentionne ici ton expérience en stage ou alternance, les entreprises où tu as travaillé et les types de missions que tu as réalisées. Donne envie au jury de découvrir ton portfolio !
+        </p>
+        <p>
+          Tu peux aussi parler de tes projets personnels, de tes centres d'intérêt techniques, de tes certifications en cours ou obtenues, et de tes ambitions professionnelles après le BTS.
+        </p>
+        <a href="situations.html" class="btn-primary" style="margin-top:0.5rem;">Découvrir mes situations →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Portfolio E5 — BTS SIO option SISR · <span>Prénom NOM</span> · Promotion 2023–2025</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

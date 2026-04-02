@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accueil — Portfolio E5 BTS SIO SISR</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* HERO */
+  #accueil {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 60px;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37,99,235,0.18) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 780px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,158,11,0.15);
+    border: 1px solid rgba(245,158,11,0.4);
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-avatar {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    border: 3px solid rgba(245,158,11,0.5);
+    margin: 0 auto 2rem;
+    background: var(--navy-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--accent);
+    font-weight: 700;
+    animation: fadeUp 0.6s 0.1s ease both;
+    overflow: hidden;
+  }
+  .hero-avatar img { width:100%; height:100%; object-fit:cover; display:none; }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    animation: fadeUp 0.6s 0.15s ease both;
+  }
+  .hero-name span { color: var(--accent); }
+  .hero-title {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.35);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: float 2s ease-in-out infinite;
+  }
+  .scroll-arrow {
+    width: 20px; height: 20px;
+    border-right: 2px solid rgba(255,255,255,0.3);
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    transform: rotate(45deg);
+  }
+
+  /* CARDS DE NAVIGATION RAPIDE */
+  .quick-nav {
+    padding: 4rem 2rem;
+    background: var(--section-bg);
+  }
+  .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .quick-card {
+    background: var(--card-bg);
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 1.4rem 1.2rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .quick-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-color: var(--blue);
+  }
+  .quick-card-icon {
+    font-size: 1.6rem;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(37,99,235,0.08);
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+  .quick-card-label { font-size: 0.85rem; font-weight: 300; color: var(--text-muted); }
+  .quick-card-title { font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-6px); }
+  }
+  @media (max-width: 768px) {
+    .hero-ctas { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Portfolio <span>E5</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="presentation.html">Présentation</a></li>
+    <li><a href="formation.html">Formation</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="situations.html">Situations</a></li>
+    <li><a href="veille.html">Veille</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="accueil">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Portfolio Épreuve E5 — BTS SIO option SISR</div>
+    <!-- Remplace "P N" par tes initiales. Pour une photo : retire display:none sur l'img et renseigne src= -->
+    <div class="hero-avatar">
+      <img src="" alt="Photo" style="display:none">
+      <span>P N</span>
+    </div>
+    <!-- Modifie ton prénom et ton nom -->
+    <h1 class="hero-name">Prénom <span>NOM</span></h1>
+    <!-- Modifie ta spécialité -->
+    <p class="hero-title">BTS SIO — Option SISR · Infrastructure Systèmes et Réseaux</p>
+    <div class="hero-ctas">
+      <a href="situations.html" class="btn-primary">Voir mes situations professionnelles →</a>
+      <a href="contact.html" class="btn-secondary">Me contacter</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- NAVIGATION RAPIDE -->
+<section class="quick-nav">
+  <div class="quick-grid">
+    <a href="presentation.html" class="quick-card">
+      <div class="quick-card-icon">👤</div>
+      <div>
+        <div class="quick-card-label">Page 1</div>
+        <div class="quick-card-title">Présentation</div>
+      </div>
+    </a>
+    <a href="formation.html" class="quick-card">
+      <div class="quick-card-icon">🎓</div>
+      <div>
+        <div class="quick-card-label">Page 2</div>
+        <div class="quick-card-title">Formation</div>
+      </div>
+    </a>
+    <a href="competences.html" class="quick-card">
+      <div class="quick-card-icon">⚙️</div>
+      <div>
+        <div class="quick-card-label">Page 3</div>
+        <div class="quick-card-title">Compétences</div>
+      </div>
+    </a>
+    <a href="situations.html" class="quick-card">
+      <div class="quick-card-icon">📋</div>
+      <div>
+        <div class="quick-card-label">Page 4</div>
+        <div class="quick-card-title">Situations E5</div>
+      </div>
+    </a>
+    <a href="veille.html" class="quick-card">
+      <div class="quick-card-icon">🔍</div>
+      <div>
+        <div class="quick-card-label">Page 5</div>
+        <div class="quick-card-title">Veille techno.</div>
+      </div>
+    </a>
+    <a href="certifications.html" class="quick-card">
+      <div class="quick-card-icon">🏅</div>
+      <div>
+        <div class="quick-card-label">Page 6</div>
+        <div class="quick-card-title">Certifications</div>
+      </div>
+    </a>
+    <a href="contact.html" class="quick-card">
+      <div class="quick-card-icon">✉️</div>
+      <div>
+        <div class="quick-card-label">Page 7</div>
+        <div class="quick-card-title">Contact</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>Portfolio E5 — BTS SIO option SISR · <span>Prénom NOM</span> · Promotion 2023–2025</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
