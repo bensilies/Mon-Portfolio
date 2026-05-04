@@ -73,6 +73,87 @@
     .presentation-visual { flex-direction: row; align-items: flex-start; }
     .profile-photo { width: 100px; height: 100px; font-size: 2rem; }
   }
+  .timeline {
+    position: relative;
+    padding-left: 2.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--blue), var(--accent));
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .timeline-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  }
+  .timeline-dot {
+    position: absolute;
+    left: -2rem;
+    top: 1.5rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--blue);
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .timeline-dot::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--white);
+  }
+  .timeline-date {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .timeline-title { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .timeline-sub { font-size: 0.88rem; color: var(--text-muted); font-weight: 300; }
+  .timeline-desc {
+    font-size: 0.87rem;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .timeline-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+  .timeline-tag {
+    background: rgba(37,99,235,0.08);
+    color: var(--blue);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid rgba(37,99,235,0.15);
+  }
+  .timeline-item.experience .timeline-dot { background: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+  .timeline-item.experience .timeline-date { color: #B45309; }
+  .timeline-item.other-activity .timeline-dot { background: #8B5CF6; box-shadow: 0 0 0 2px #8B5CF6; }
+  .timeline-item.other-activity .timeline-date { color: #8B5CF6; }
 </style>
 </head>
 <body>
@@ -81,12 +162,10 @@
   <a href="index.html" class="nav-logo">Portfolio <span>E5</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Accueil</a></li>
-    <li><a href="presentation.html">Présentation</a></li>
-    <li><a href="formation.html">Formation</a></li>
-    <li><a href="competences.html">Compétences</a></li>
-    <li><a href="situations.html">Situations</a></li>
+    <li><a href="presentation.html">À Propos</a></li>
+    <li><a href="competences.html">Épreuve E5</a></li>
+    <li><a href="situations.html">Épreuve E6</a></li>
     <li><a href="veille.html">Veille</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -103,16 +182,16 @@
     </div>
     <div class="presentation-grid fade-in">
       <div class="presentation-visual">
-        <!-- PHOTO : remplace "P N" par tes initiales, ou mets ton URL photo dans src= et retire display:none -->
+        <!-- PHOTO : remplace "I B" par tes initiales, ou mets ton URL photo dans src= et retire display:none -->
         <div class="profile-photo">
           <img src="" alt="Photo de profil">
-          <span>P N</span>
+          <span>I B</span>
         </div>
         <div class="info-chips">
-          <!-- Modifie chaque ligne avec tes vraies informations -->
+          <!-- Informations personnelles -->
           <div class="info-chip">
             <div class="icon">📍</div>
-            <div><div class="label">Localisation</div><div class="value">Ville, Région</div></div>
+            <div><div class="label">Localisation</div><div class="value">Vilejuif, Île-de-France</div></div>
           </div>
           <div class="info-chip">
             <div class="icon">🎓</div>
@@ -120,39 +199,159 @@
           </div>
           <div class="info-chip">
             <div class="icon">🏢</div>
-            <div><div class="label">Établissement</div><div class="value">Nom de ton lycée / CFA</div></div>
+            <div><div class="label">Établissement</div><div class="value">Efrei et Aurlom BTS+</div></div>
           </div>
           <div class="info-chip">
             <div class="icon">📅</div>
-            <div><div class="label">Promotion</div><div class="value">2023 — 2025</div></div>
+            <div><div class="label">Promotion</div><div class="value">2024 — 2026</div></div>
           </div>
           <div class="info-chip">
             <div class="icon">💼</div>
-            <div><div class="label">Entreprise</div><div class="value">Nom de l'entreprise d'alternance</div></div>
+            <div><div class="label">Entreprise (Stage)</div><div class="value">Commune de Saint-Ouen-sur-Seine</div></div>
+          </div>
+          <div class="info-chip">
+            <div class="icon">📞</div>
+            <div><div class="label">Téléphone</div><div class="value">07 69 96 79 26</div></div>
+          </div>
+          <div class="info-chip">
+            <div class="icon">✉️</div>
+            <div><div class="label">Email</div><div class="value">bens.ilies@gmail.com</div></div>
           </div>
         </div>
       </div>
 
       <div class="presentation-text">
         <h2>Bienvenue sur mon portfolio professionnel</h2>
-        <!-- Modifie les paragraphes ci-dessous avec ta vraie présentation -->
+        <!-- Présentation personnelle basée sur le CV -->
         <p>
-          Décris ici ton profil en quelques phrases : qui tu es, ce qui t'a amené à choisir le BTS SIO option SISR, tes motivations dans le domaine de l'informatique et des réseaux.
+          Mon parcours a commencé par un baccalauréat STI2D, qui m'a permis d'acquérir des bases solides en technologie et de confirmer mon intérêt pour l'informatique. J'ai ensuite intégré un BUT GEII, durant lequel j'ai découvert plusieurs domaines techniques, notamment les réseaux, qui m'ont particulièrement plu. C'est à ce moment‑là que j'ai décidé de m'orienter vers une formation plus spécialisée dans ce domaine.
         </p>
         <p>
-          Mentionne ici ton expérience en stage ou alternance, les entreprises où tu as travaillé et les types de missions que tu as réalisées. Donne envie au jury de découvrir ton portfolio !
+          J'ai donc poursuivi en BTS SIO SISR, d'abord à Aurlom puis à l'EFREI. Cette formation correspond davantage à mon projet professionnel, car elle est axée sur l'administration des systèmes, les réseaux et le support informatique.
         </p>
         <p>
-          Tu peux aussi parler de tes projets personnels, de tes centres d'intérêt techniques, de tes certifications en cours ou obtenues, et de tes ambitions professionnelles après le BTS.
+          À travers mes stages, notamment mon stage en mairie en tant que technicien de proximité, j'ai pu développer des compétences concrètes comme le support aux utilisateurs, l'installation de systèmes et de logiciels, ainsi que le travail dans un environnement professionnel réel. Cela m'a aussi permis de gagner en autonomie, en adaptabilité et en rigueur.
         </p>
+        <p>
+          Aujourd'hui, je me définis comme un étudiant sérieux, motivé et intéressé par les métiers liés aux infrastructures réseaux et systèmes, avec l'objectif de continuer à me spécialiser et à renforcer mes compétences techniques après le BTS.
+        </p>
+        <a href="cv.pdf" download class="btn-primary" style="margin-top:0.5rem;">Télécharger mon CV →</a>
         <a href="situations.html" class="btn-primary" style="margin-top:0.5rem;">Découvrir mes situations →</a>
       </div>
     </div>
   </div>
 </section>
 
+<section>
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">MON PARCOURS</div>
+      <h2 class="section-title">Formation et expériences</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="fade-in">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Diplômé</div>
+          <div class="timeline-title">Baccalauréat STI2D</div>
+          <div class="timeline-sub">Lycée La Salle Saint-Denis</div>
+          <div class="timeline-desc">
+            Série Sciences et Technologies de l'Industrie et du Développement Durable, obtenu avec mention Assez Bien.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">STI2D</span>
+            <span class="timeline-tag">Mention Assez Bien</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">sept. 2023 — juin 2024</div>
+          <div class="timeline-title">BUT Génie Électrique et Informatique Industrielle (GEII)</div>
+          <div class="timeline-sub">IUT Cachan</div>
+          <div class="timeline-desc">
+            Première année d'études supérieures orientée vers l'électronique, l'informatique industrielle et les systèmes embarqués.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">GEII</span>
+            <span class="timeline-tag">IUT</span>
+          </div>
+        </div>
+        <div class="timeline-item experience">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2024</div>
+          <div class="timeline-title">Concours de robotique</div>
+          <div class="timeline-sub">Création d'un robot suiveur de ligne</div>
+          <div class="timeline-desc">
+            Participation à la conception et programmation d'un robot suiveur de ligne dans le cadre du concours de robotique en IUT.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Robotique</span>
+            <span class="timeline-tag">Programmation</span>
+            <span class="timeline-tag">Projet</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">sept. 2024 — juin 2026</div>
+          <div class="timeline-title">BTS Services Informatiques aux Organisations (SIO)</div>
+          <div class="timeline-sub">Efrei, Vilejuif / Aurlom BTS+, Paris</div>
+          <div class="timeline-desc">
+            Formation SISR axée sur l'administration des systèmes et des réseaux, la cybersécurité, le développement mobile et la gestion de services informatiques.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Systèmes & Réseaux</span>
+            <span class="timeline-tag">Cybersécurité</span>
+            <span class="timeline-tag">Applications mobiles</span>
+          </div>
+        </div>
+        <div class="timeline-item experience">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">2025</div>
+          <div class="timeline-title">Stage Technicien de proximité</div>
+          <div class="timeline-sub">Commune de Saint-Ouen-sur-Seine</div>
+          <div class="timeline-desc">
+            Support informatique de proximité, installation et configuration des postes, maintenance matériel et résolution d'incidents auprès des utilisateurs.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Support utilisateur</span>
+            <span class="timeline-tag">Maintenance</span>
+            <span class="timeline-tag">Installation</span>
+          </div>
+        </div>
+        <div class="timeline-item other-activity">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">janv. 2021 — déc. 2021</div>
+          <div class="timeline-title">Bénévole actif</div>
+          <div class="timeline-sub">Association KOEZION</div>
+          <div class="timeline-desc">
+            Participation à des maraudes, préparation de colis d'aide, accompagnement de personnes en difficulté et lutte contre l'isolement.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Bénévolat</span>
+            <span class="timeline-tag">Solidarité</span>
+          </div>
+        </div>
+        <div class="timeline-item other-activity">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">janv. 2022 — déc. 2022</div>
+          <div class="timeline-title">Professeur particulier</div>
+          <div class="timeline-sub">Élèves de primaire et collège</div>
+          <div class="timeline-desc">
+            Accompagnement en maths, préparation de cours personnalisés et suivi individualisé des élèves pour améliorer leurs résultats.
+          </div>
+          <div class="timeline-tags">
+            <span class="timeline-tag">Pédagogie</span>
+            <span class="timeline-tag">Suivi personnalisé</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>Portfolio E5 — BTS SIO option SISR · <span>Prénom NOM</span> · Promotion 2023–2025</p>
+  <p>Portfolio E5 — BTS SIO option SISR · <span>Iliès BENSALEM</span> · Promotion 2024–2026</p>
 </footer>
 
 <script src="js/main.js"></script>

@@ -55,6 +55,37 @@
   .skill-fill.red { background: linear-gradient(90deg, #EF4444, #F87171); }
   .skill-fill.teal { background: linear-gradient(90deg, #14B8A6, #2DD4BF); }
 
+  .synthesis-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+  .synthesis-table th,
+  .synthesis-table td {
+    border: 1px solid var(--gray-200);
+    padding: 0.9rem 1rem;
+    vertical-align: top;
+  }
+  .synthesis-table th {
+    background: rgba(37,99,235,0.08);
+    font-weight: 600;
+    color: var(--navy);
+    text-align: left;
+  }
+  .synthesis-table tbody tr:nth-child(even) {
+    background: rgba(148,163,184,0.08);
+  }
+  .synthesis-table .check {
+    text-align: center;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .synthesis-note {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
   /* Bloc compétences BTS */
   .bts-grid {
     display: grid;
@@ -79,12 +110,11 @@
   <a href="index.html" class="nav-logo">Portfolio <span>E5</span></a>
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Accueil</a></li>
-    <li><a href="presentation.html">Présentation</a></li>
-    <li><a href="formation.html">Formation</a></li>
-    <li><a href="competences.html">Compétences</a></li>
-    <li><a href="situations.html">Situations</a></li>
+    <li><a href="presentation.html">À Propos</a></li>
+
+    <li><a href="competences.html">Épreuve E5</a></li>
+    <li><a href="situations.html">Épreuve E6</a></li>
     <li><a href="veille.html">Veille</a></li>
-    <li><a href="certifications.html">Certifications</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -101,244 +131,250 @@
       <div class="divider"></div>
     </div>
 
-    <div class="competences-grid fade-in">
-
-      <!-- Carte 1 — Réseaux. Modifie les % et les noms de compétences -->
-      <div class="competence-card">
-        <div class="comp-header">
-          <div class="comp-icon blue">🌐</div>
-          <div>
-            <div class="comp-title">Réseaux & Administration</div>
-            <div class="comp-sub">Protocoles, routage, switching</div>
-          </div>
-        </div>
-        <div class="skill-bars">
-          <div class="skill-item">
-            <div class="skill-label"><span>Cisco IOS / Routage</span><span>80%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>VLAN / Switching</span><span>75%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>TCP/IP / Modèle OSI</span><span>85%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>VPN / WAN</span><span>65%</span></div>
-            <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 2 — Systèmes -->
-      <div class="competence-card">
-        <div class="comp-header">
-          <div class="comp-icon amber">🖥️</div>
-          <div>
-            <div class="comp-title">Systèmes d'exploitation</div>
-            <div class="comp-sub">Administration serveurs</div>
-          </div>
-        </div>
-        <div class="skill-bars">
-          <div class="skill-item">
-            <div class="skill-label"><span>Windows Server</span><span>80%</span></div>
-            <div class="skill-bar"><div class="skill-fill amber" data-width="80"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Linux (Debian/Ubuntu)</span><span>70%</span></div>
-            <div class="skill-bar"><div class="skill-fill amber" data-width="70"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Active Directory / GPO</span><span>75%</span></div>
-            <div class="skill-bar"><div class="skill-fill amber" data-width="75"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>PowerShell / Bash</span><span>60%</span></div>
-            <div class="skill-bar"><div class="skill-fill amber" data-width="60"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 3 — Sécurité -->
-      <div class="competence-card">
-        <div class="comp-header">
-          <div class="comp-icon green">🛡️</div>
-          <div>
-            <div class="comp-title">Sécurité informatique</div>
-            <div class="comp-sub">Protection, pare-feu, audits</div>
-          </div>
-        </div>
-        <div class="skill-bars">
-          <div class="skill-item">
-            <div class="skill-label"><span>Pare-feu (pfSense / iptables)</span><span>70%</span></div>
-            <div class="skill-bar"><div class="skill-fill green" data-width="70"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Analyse de vulnérabilités</span><span>65%</span></div>
-            <div class="skill-bar"><div class="skill-fill green" data-width="65"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Chiffrement / PKI / SSL</span><span>60%</span></div>
-            <div class="skill-bar"><div class="skill-fill green" data-width="60"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>ANSSI / RGPD</span><span>55%</span></div>
-            <div class="skill-bar"><div class="skill-fill green" data-width="55"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 4 — Virtualisation -->
-      <div class="competence-card">
-        <div class="comp-header">
-          <div class="comp-icon purple">☁️</div>
-          <div>
-            <div class="comp-title">Virtualisation & Cloud</div>
-            <div class="comp-sub">Hyperviseurs, conteneurs</div>
-          </div>
-        </div>
-        <div class="skill-bars">
-          <div class="skill-item">
-            <div class="skill-label"><span>VMware / VirtualBox</span><span>75%</span></div>
-            <div class="skill-bar"><div class="skill-fill purple" data-width="75"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Docker / Conteneurs</span><span>60%</span></div>
-            <div class="skill-bar"><div class="skill-fill purple" data-width="60"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Azure / AWS (notions)</span><span>45%</span></div>
-            <div class="skill-bar"><div class="skill-fill purple" data-width="45"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Proxmox / Hyper-V</span><span>55%</span></div>
-            <div class="skill-bar"><div class="skill-fill purple" data-width="55"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 5 — Services réseau. Modifie ou supprime selon ton niveau -->
-      <div class="competence-card">
-        <div class="comp-header">
-          <div class="comp-icon teal">⚙️</div>
-          <div>
-            <div class="comp-title">Services réseau</div>
-            <div class="comp-sub">DNS, DHCP, supervision</div>
-          </div>
-        </div>
-        <div class="skill-bars">
-          <div class="skill-item">
-            <div class="skill-label"><span>DNS / DHCP</span><span>80%</span></div>
-            <div class="skill-bar"><div class="skill-fill teal" data-width="80"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Zabbix / Nagios (supervision)</span><span>60%</span></div>
-            <div class="skill-bar"><div class="skill-fill teal" data-width="60"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Samba / NFS</span><span>55%</span></div>
-            <div class="skill-bar"><div class="skill-fill teal" data-width="55"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Messagerie (Exchange/Postfix)</span><span>50%</span></div>
-            <div class="skill-bar"><div class="skill-fill teal" data-width="50"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 6 — Soft skills -->
-      <div class="competence-card">
-        <div class="comp-header">
-          <div class="comp-icon red">💡</div>
-          <div>
-            <div class="comp-title">Compétences transversales</div>
-            <div class="comp-sub">Communication, organisation</div>
-          </div>
-        </div>
-        <div class="skill-bars">
-          <div class="skill-item">
-            <div class="skill-label"><span>Rédaction documentaire</span><span>85%</span></div>
-            <div class="skill-bar"><div class="skill-fill red" data-width="85"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Travail en équipe</span><span>90%</span></div>
-            <div class="skill-bar"><div class="skill-fill red" data-width="90"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Support utilisateur</span><span>80%</span></div>
-            <div class="skill-bar"><div class="skill-fill red" data-width="80"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Gestion de projet</span><span>65%</span></div>
-            <div class="skill-bar"><div class="skill-fill red" data-width="65"></div></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- BLOC COMPETENCES BTS -->
-    <div class="section-header fade-in" style="margin-top:4rem;">
-      <div class="section-tag">Référentiel BTS SIO</div>
-      <h2 class="section-title" style="font-size:1.8rem;">Blocs de compétences SISR</h2>
+    <div class="section-header fade-in">
+      <div class="section-tag">Modalités</div>
+      <h2 class="section-title">Déroulement de l'épreuve E5</h2>
+      <p class="section-sub">Comment se déroule l'évaluation des compétences en BTS SIO SISR</p>
       <div class="divider"></div>
     </div>
-    <div class="bts-grid fade-in">
-      <!-- Modifie ou complète selon le référentiel officiel -->
-      <div class="bts-card">
-        <div class="bts-card-code">B1.1</div>
-        <div class="bts-card-title">Gérer le patrimoine informatique</div>
-        <div class="bts-card-detail">Recenser et identifier les ressources numériques</div>
-      </div>
-      <div class="bts-card">
-        <div class="bts-card-code">B1.2</div>
-        <div class="bts-card-title">Répondre aux incidents et demandes d'assistance</div>
-        <div class="bts-card-detail">Traiter les incidents, qualifier les demandes</div>
-      </div>
-      <div class="bts-card">
-        <div class="bts-card-code">B1.3</div>
-        <div class="bts-card-title">Développer la présence en ligne de l'organisation</div>
-        <div class="bts-card-detail">Participer à l'évolution du SI</div>
-      </div>
-      <div class="bts-card">
-        <div class="bts-card-code">B2.1</div>
-        <div class="bts-card-title">Concevoir et réaliser un réseau informatique</div>
-        <div class="bts-card-detail">Architecture, câblage, configuration</div>
-      </div>
-      <div class="bts-card">
-        <div class="bts-card-code">B2.2</div>
-        <div class="bts-card-title">Installer et configurer des équipements actifs</div>
-        <div class="bts-card-detail">Commutateurs, routeurs, points d'accès</div>
-      </div>
-      <div class="bts-card">
-        <div class="bts-card-code">B2.3</div>
-        <div class="bts-card-title">Faire évoluer et maintenir le réseau</div>
-        <div class="bts-card-detail">Supervision, optimisation, documentation</div>
-      </div>
-      <div class="bts-card">
-        <div class="bts-card-code">B3.1</div>
-        <div class="bts-card-title">Protéger les données, les utilisateurs et le SI</div>
-        <div class="bts-card-detail">Sécuriser, sauvegarder, contrôler les accès</div>
-      </div>
-      <div class="bts-card">
-        <div class="bts-card-code">B3.2</div>
-        <div class="bts-card-title">Assurer la cybersécurité d'une infrastructure</div>
-        <div class="bts-card-detail">Audits, plans de reprise, veille sécurité</div>
-      </div>
-      <div class="bts-card">
-        <div class="bts-card-code">B3.3</div>
-        <div class="bts-card-title">Organiser son développement professionnel</div>
-        <div class="bts-card-detail">Veille, certifications, auto-formation</div>
-      </div>
+
+    <div class="fade-in" style="max-width: 800px; margin: 0 auto;">
+
+      <section style="margin-bottom: 2rem; padding: 2rem; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--gray-200); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem;">1. Préparation et constitution du portfolio</h3>
+        <p style="font-size: 1rem; line-height: 1.6; color: var(--text); margin-bottom: 1rem;">
+          Le candidat constitue un portfolio numérique présentant l'ensemble de ses réalisations professionnelles et compétences acquises durant la formation. Ce portfolio doit être organisé de manière claire et démontrer la maîtrise des compétences du référentiel BTS SIO option SISR.
+        </p>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 0.5rem;">· Recueil des situations professionnelles réalisées</li>
+          <li style="margin-bottom: 0.5rem;">· Mise en évidence des compétences travaillées (B1.1 à B3.3)</li>
+          <li style="margin-bottom: 0.5rem;">· Documentation technique et justificatifs</li>
+          <li>· Présentation cohérente et professionnelle</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 2rem; padding: 2rem; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--gray-200); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem;">2. Présentation orale (10 minutes)</h3>
+        <p style="font-size: 1rem; line-height: 1.6; color: var(--text); margin-bottom: 1rem;">
+          Le candidat présente son parcours et ses réalisations devant un jury composé d'enseignants et de professionnels. La présentation doit être structurée et démontrer la capacité à communiquer efficacement sur ses compétences techniques.
+        </p>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 0.5rem;">· Présentation du parcours de formation (10 minutes)</li>
+          <li style="margin-bottom: 0.5rem;">· Mise en valeur des situations professionnelles clés</li>
+          <li style="margin-bottom: 0.5rem;">· Explication des choix techniques et justifications</li>
+          <li>· Utilisation d'un support visuel (portfolio projeté)</li>
+        </ul>
+      </section>
+
+      <section style="margin-bottom: 2rem; padding: 2rem; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--gray-200); box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem;">3. Entretien avec le jury (30 minutes)</h3>
+        <p style="font-size: 1rem; line-height: 1.6; color: var(--text); margin-bottom: 1rem;">
+          Après la présentation, le jury interroge le candidat sur son portfolio, ses choix techniques et sa capacité à résoudre des problèmes. Cette phase évalue la profondeur des connaissances et l'aptitude à l'analyse.
+        </p>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 0.5rem;">· Questions sur les compétences techniques</li>
+          <li style="margin-bottom: 0.5rem;">· Analyse de situations problématiques</li>
+          <li style="margin-bottom: 0.5rem;">· Justification des décisions prises</li>
+          <li>· Discussion sur l'évolution professionnelle</li>
+        </ul>
+      </section>
+
     </div>
+
+    <section class="fade-in" style="margin-top: 2rem;">
+      <div class="section-header">
+        <div class="section-tag">Synthèse</div>
+        <h2 class="section-title">Tableau de synthèse des compétences</h2>
+        <p class="section-sub">Résumé des réalisations professionnelles et des compétences mobilisées pour l’épreuve E5.</p>
+        <div class="divider"></div>
+      </div>
+      <div class="synthesis-note">
+        Ce tableau présente les principales réalisations effectuées en formation et en milieu professionnel, avec les blocs de compétences SISR mobilisés.
+      </div>
+      <table class="synthesis-table">
+        <thead>
+          <tr>
+            <th>Réalisation professionnelle</th>
+            <th>Gérer le patrimoine informatique</th>
+            <th>Répondre aux incidents et aux demandes d’évolution</th>
+            <th>Développer la présence en ligne</th>
+            <th>Travailler en mode projet</th>
+            <th>Mettre à disposition un service informatique</th>
+            <th>Organiser son développement professionnel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="7" style="font-weight: 700; background: rgba(15,23,42,0.05);">Réalisation en cours de formation</td>
+          </tr>
+          <tr>
+            <td>Création d'une infrastructure réseau avec serveur Proxmox, VLAN, routage inter-VLAN dans un projet de groupe</td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Simulation des maquettes sur Cisco Packet Tracer</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Création et configuration de machines virtuelles via VirtualBox</td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Création d'une redondance Windows Server sur VM</td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Espace Notion, veille Feedly/Google Alerts, LinkedIn, portfolio</td>
+            <td class="check">X</td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Paramétrage de la gestion de tickets sur GLPI</td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Création d’une page entreprise LinkedIn</td>
+            <td></td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Réalisation d’un post LinkedIn pour l’entreprise</td>
+            <td></td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Déploiement de GLPI / site vitrine / service de l’entreprise</td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="7" style="font-weight: 700; background: rgba(15,23,42,0.05);">Réalisations en milieu professionnel en cours de première année</td>
+          </tr>
+          <tr>
+            <td>Gestion de tickets sur GLPI</td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Installation et configuration d'un PC</td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Création d'un site web pour un client</td>
+            <td></td>
+            <td class="check">X</td>
+            <td class="check">X</td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="7" style="font-weight: 700; background: rgba(15,23,42,0.05);">Réalisations en milieu professionnel en cours de seconde année</td>
+          </tr>
+          <tr>
+            <td>Attribution de cartes SIM sur l'AD</td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Descente d'image Windows 10</td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Intervention sur la réparation d'une imprimante</td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Configuration d'un switch KVM</td>
+            <td class="check">X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Participation au projet de migration Windows 11 de la mairie</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="check">X</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
   </div>
 </section>
 
 <footer>
-  <p>Portfolio E5 — BTS SIO option SISR · <span>Prénom NOM</span> · Promotion 2023–2025</p>
+  <p>Portfolio E5 — BTS SIO option SISR · <span>Iliès Bensalem</span> · Promotion 2023–2025</p>
 </footer>
 
 <script src="js/main.js"></script>
